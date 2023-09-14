@@ -6,13 +6,13 @@
 <PageTitle>Index</PageTitle>
 
 <div>
-    <h2>Welcome, @user?.Identity?.Name!</h2>
+    <h2>Welcome, @user?.Identity?.Name?.Remove(5)</h2>
     <p>Email: @user?.FindFirst(ClaimTypes.Email)?.Value</p>
     <!-- Other user data can be accessed using user.Claims -->
 </div>
 
 
-<p>@authenticationState</p>
+<p>@authenticationState?.User?.Identity?.Name</p>
 
 @code {
     private AuthenticationState? authenticationState;
